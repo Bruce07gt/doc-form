@@ -8,11 +8,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Email;
 
 @Entity
 @Table(name = "TB_EmailModel")
-public class EmailModel implements Serializable{
+public class Email implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -24,16 +23,16 @@ public class EmailModel implements Serializable{
 	@Column(columnDefinition = "TEXT")
 	private String message;
 	
-	@Email
+	@jakarta.validation.constraints.Email
 	private String emailSender;
 
 
 	
-	public EmailModel() {
+	public Email() {
 		super();
 	}
 	
-	public EmailModel(Integer emailId, String subject, String message, String emailSender) {
+	public Email(Integer emailId, String subject, String message, String emailSender) {
 		super();
 		this.emailId = emailId;
 		this.subject = subject;

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.docform.docform.model.EmailModel;
+import com.docform.docform.model.Email;
 import com.docform.docform.services.EmailService;
 
 @RestController
@@ -28,17 +28,17 @@ public class EmailController {
     }
 
     @GetMapping
-    public List<EmailModel> findAllForms() {
+    public List<Email> findAllForms() {
     	return emailService.findAllEmails();
     }
 
     @GetMapping(value = "/{id}")
-    public Optional<EmailModel> findById(@PathVariable("id") Integer id) {
+    public Optional<Email> findById(@PathVariable("id") Integer id) {
     	return emailService.findById(id);
     }
     
     @PostMapping
-    public EmailModel saveForm(@RequestBody EmailModel email) {
+    public Email saveForm(@RequestBody Email email) {
     	return emailService.saveEmail(email);
     }
 

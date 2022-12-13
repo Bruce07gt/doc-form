@@ -3,12 +3,9 @@ package com.docform.docform.services.impl;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-import com.docform.docform.model.EmailModel;
+import com.docform.docform.model.Email;
 import com.docform.docform.repositories.EmailRepository;
 import com.docform.docform.services.EmailService;
 
@@ -22,17 +19,17 @@ public class EmailServiceImpl implements EmailService{
 	}
 
 	@Override
-	public List<EmailModel> findAllEmails() {
+	public List<Email> findAllEmails() {
 		return emailRepository.findAll();
 	}
 
 	@Override
-	public Optional<EmailModel> findById(Integer id) {
+	public Optional<Email> findById(Integer id) {
 		return emailRepository.findById(id);
 	}
 
 	@Override
-	public EmailModel saveEmail(EmailModel email) {
+	public Email saveEmail(Email email) {
 		return emailRepository.save(email);
 	}
 
@@ -43,7 +40,7 @@ public class EmailServiceImpl implements EmailService{
 	}
 
 	@Override
-	public EmailModel UpdateEmail(EmailModel email) {
+	public Email UpdateEmail(Email email) {
 		return emailRepository.save(email);
 	}
 

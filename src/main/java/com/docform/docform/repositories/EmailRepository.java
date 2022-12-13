@@ -3,9 +3,9 @@ package com.docform.docform.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.docform.docform.model.EmailModel;
+import com.docform.docform.model.Email;
 
 @Repository
-public interface EmailRepository extends JpaRepository<EmailModel, Integer> {
+public interface EmailRepository extends JpaRepository<Email, Integer> {
 
 }
